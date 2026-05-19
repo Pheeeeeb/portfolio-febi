@@ -80,7 +80,7 @@ export default function Home() {
             FS
           </Link>
           <div className="hidden md:flex items-center gap-8">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Certificates", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -108,7 +108,7 @@ export default function Home() {
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-[72px] left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 py-4 px-6 flex flex-col gap-4 shadow-xl">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {["Home", "About", "Skills", "Projects", "Certificates", "Contact"].map((item) => (
               <Link
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -280,12 +280,11 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16"
           >
-            <AboutCard icon={BookOpen} title="Education" desc="Pursuing BCA at Marian College with focus on software development" />
-            <AboutCard icon={Target} title="Goals" desc="Becoming a skilled software developer creating impactful solutions" />
-            <AboutCard icon={Award} title="Achievements" desc="Consistently excelling in academic and technical pursuits" />
-            <AboutCard icon={GraduationCap} title="Learning" desc="Always exploring new technologies and frameworks" />
+            <AboutCard icon={GraduationCap} title="Bachelor of Computer Applications" desc="Marian College Kuttikanam Autonomous, Idukki, Kerala (2026-2029)" />
+            <AboutCard icon={BookOpen} title="Higher Secondary Education (90%)" desc="O.E.M Public School, Eraviperoor, Pathanamthitta (2023-2025)" />
+            <AboutCard icon={Award} title="Secondary School Certificate (84.2%)" desc="The Emirates National School, Sharjah, UAE (2011-2023)" />
           </motion.div>
         </div>
       </section>
@@ -301,16 +300,11 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 xl:gap-8">
-            <SkillCard icon={Code} title="Programming" desc="Python, Java, C, JavaScript" percent={80} />
-            <SkillCard icon={Globe} title="Web Development" desc="HTML, CSS, React, Node.js" percent={75} />
-            <SkillCard icon={Database} title="Database Management" desc="MySQL, MongoDB" percent={70} />
-            <SkillCard icon={Terminal} title="Problem Solving" desc="Analytical thinking & debugging" percent={85} />
-            <SkillCard icon={MessageCircle} title="Communication" desc="Technical writing & presentations" percent={80} />
-            <SkillCard icon={Users} title="Teamwork" desc="Collaboration & leadership" percent={85} />
-            <SkillCard icon={Layers} title="UI/UX Design" desc="Figma, responsive design" percent={65} />
-            <SkillCard icon={GitBranch} title="Version Control" desc="Git, GitHub" percent={75} />
-            <SkillCard icon={Cpu} title="Data Structures" desc="Algorithms & optimization" percent={70} />
-            <SkillCard icon={Puzzle} title="Adaptability" desc="Quick learner & flexible" percent={90} />
+            <SkillCard icon={Code} title="HTML" desc="Semantic structure & accessibility" percent={90} />
+            <SkillCard icon={Layers} title="CSS" desc="Responsive design & animations" percent={85} />
+            <SkillCard icon={Terminal} title="JavaScript" desc="DOM manipulation & logic" percent={80} />
+            <SkillCard icon={Globe} title="Bootstrap" desc="Component-based UI frameworks" percent={85} />
+            <SkillCard icon={Database} title="MySQL" desc="Database management & queries" percent={75} />
           </div>
         </div>
       </section>
@@ -328,26 +322,57 @@ export default function Home() {
               Here are some of the projects I&apos;ve worked on. Each one represents a learning experience and a step forward in my development journey.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 xl:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-8">
             <ProjectCard
-              title="Personal Portfolio Website"
-              desc="A modern, responsive portfolio website built with React and Next.js. Features smooth animations, dark theme with gold accents, and mobile-first design."
-              tags={["HTML", "CSS", "React", "Next.js"]}
+              title="SuperMarket Website"
+              desc="A responsive e-commerce website designed for smooth product browsing and easy navigation. Built with a clean, user-friendly interface including product sections and banners."
+              tags={["HTML", "CSS"]}
+              url="https://pheeeeeb.github.io/SuperMarket/"
             />
             <ProjectCard
-              title="Student Management System"
-              desc="A full-stack application for managing student records, attendance, and grades. Built with Python Flask backend and MySQL database."
-              tags={["Python", "MySQL", "Flask"]}
+              title="fam-love"
+              desc="A simple and visually appealing website created with responsive web design principles. Designed attractive layouts focused on a clean structure and mobile-friendly design."
+              tags={["HTML", "CSS"]}
+              url="https://pheeeeeb.github.io/fam-love/"
             />
             <ProjectCard
-              title="Weather Dashboard"
-              desc="An interactive weather application that fetches real-time data from APIs and displays forecasts with beautiful visualizations."
-              tags={["JavaScript", "API", "CSS"]}
+              title="Portfolio Website"
+              desc="A personal portfolio website showcasing projects, skills, and contact information. Created responsive sections with modern styling and smooth navigation."
+              tags={["HTML", "CSS", "JavaScript", "React", "Next.js"]}
+              url="#"
             />
-            <ProjectCard
-              title="Task Manager App"
-              desc="A productivity application for organizing tasks with categories, priorities, and deadlines. Features local storage persistence."
-              tags={["React", "LocalStorage", "CSS"]}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates Section */}
+      <section id="certificates" className="py-24 md:py-32 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent"></div>
+        <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-32">
+          <div className="text-center mb-16">
+            <span className="text-xs font-medium uppercase tracking-[0.15em] text-gold mb-4 block">Achievements</span>
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white">
+              My <span className="gold-shimmer">Certificates</span>
+            </h2>
+            <p className="text-text-secondary mt-4 max-w-lg mx-auto">
+              Professional certifications and courses I have completed to expand my skill set.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+            <CertificateCard
+              title="Artificial Intelligence"
+              issuer="MyCaptain"
+              desc="Completed a certification program in Artificial Intelligence, gaining foundational knowledge in AI concepts and applications."
+            />
+            <CertificateCard
+              title="C++"
+              issuer="MyCaptain"
+              desc="Learned core programming concepts including object-oriented programming, functions, arrays, and problem-solving using C++."
+            />
+            <CertificateCard
+              title="Introduction to SQL"
+              issuer="MyCaptain"
+              desc="Completed an introductory course on SQL covering database management, queries, tables, and data handling operations."
             />
           </div>
         </div>
@@ -398,7 +423,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-xs text-text-muted">Email</p>
-                      <a href="mailto:febi.susan@email.com" className="text-sm text-text-secondary hover:text-gold transition-colors">febi.susan@email.com</a>
+                      <a href="mailto:febisajan07@gmail.com" className="text-sm text-text-secondary hover:text-gold transition-colors">febisajan07@gmail.com</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -407,7 +432,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-xs text-text-muted">Phone</p>
-                      <p className="text-sm text-text-secondary">+91 98765 43210</p>
+                      <p className="text-sm text-text-secondary">8714269872</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -466,7 +491,7 @@ function SocialLinks({ sm = false }: { sm?: boolean }) {
       <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={`${sizeClass} flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-gold hover:text-gold transition-all duration-200`}>
         <FaGithub className={iconClass} />
       </a>
-      <a href="mailto:febi.susan@email.com" className={`${sizeClass} flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-gold hover:text-gold transition-all duration-200`}>
+      <a href="mailto:febisajan07@gmail.com" className={`${sizeClass} flex items-center justify-center rounded-full border border-border text-text-secondary hover:border-gold hover:text-gold transition-all duration-200`}>
         <Mail className={iconClass} />
       </a>
     </>
@@ -534,7 +559,7 @@ function SkillCard({ icon: Icon, title, desc, percent }: any) {
   );
 }
 
-function ProjectCard({ title, desc, tags }: any) {
+function ProjectCard({ title, desc, tags, url }: any) {
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
       <div className="glass rounded-xl overflow-hidden group hover:-translate-y-1 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300 h-full flex flex-col">
@@ -542,7 +567,7 @@ function ProjectCard({ title, desc, tags }: any) {
           <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent"></div>
           <FolderGit className="w-16 h-16 text-gold/20 group-hover:text-gold/30 group-hover:scale-110 transition-all duration-300" />
           <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <a href="#" className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-background text-sm font-semibold rounded-lg hover:bg-gold-light transition-colors duration-200">
+            <a href={url || "#"} target={url && url !== "#" ? "_blank" : "_self"} rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-background text-sm font-semibold rounded-lg hover:bg-gold-light transition-colors duration-200">
               View Project <ExternalLink className="w-4 h-4" />
             </a>
           </div>
@@ -556,6 +581,25 @@ function ProjectCard({ title, desc, tags }: any) {
                 {tag}
               </span>
             ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function CertificateCard({ title, issuer, desc }: any) {
+  return (
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+      <div className="glass rounded-xl p-6 h-full hover:-translate-y-1 hover:shadow-lg hover:shadow-gold/5 transition-all duration-300">
+        <div className="flex items-start gap-4">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gold/10 border border-gold/30 flex-shrink-0">
+            <Award className="w-6 h-6 text-gold" />
+          </div>
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-1">{title}</h3>
+            <p className="text-gold text-sm font-medium mb-3">{issuer}</p>
+            <p className="text-text-secondary text-sm leading-relaxed">{desc}</p>
           </div>
         </div>
       </div>
